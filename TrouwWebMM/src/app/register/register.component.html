@@ -1,3 +1,50 @@
-<p>
-  register works!
-</p>
+<body>
+  <!-- <li *ngFor='let item of register'>
+    {{item.name}}
+  </li> -->
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Naam</th>
+      <th scope="col">Hoeveelheid</th>
+      <th scope="col">Context</th>    
+      <th scope="col">Prijs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= 'let registerItem of register'>
+      <th scope="row">{{registerItem.id}}</th>
+      <td>{{registerItem.name}}</td>
+      <td>{{registerItem.quantity}}</td>
+      <td>{{registerItem.context}}</td>
+      <td>{{registerItem.price}}</td>
+      <td style="width: 20px"><button (click)="Add(registerItem)"><i class="fa fa-plus"></i></button></td>
+      <!-- <td><button (click)="Remove(registerItem)"><i class="fa fa-trash"></i></button></td>  !!Overbodig!!§-->
+      
+    </tr>
+  </tbody>
+</table>
+
+<div class="card" style="width: 350px; float: left; margin-left: 42%">
+  <li *ngFor='let items of checkOutCart'>{{items.name}} <button (click)="DeleteCartItem(items)"><i class="fa fa-trash"></i></button></li>
+  <p>Totaal bedrag:  {{this.bedrag}} euro</p> 
+  <button (click)="CheckOut(totalAmount)" class="btn btn-dark">Klaar!</button>
+</div>
+
+
+<div class="card" style="width: 350px;" *ngIf="this.bedrag==200" style="margin-top: 100px">
+<input type = "text" [(ngModel)]="Name" placeholder="Naam">
+<input type = "text" [(ngModel)]="Context" placeholder="Uitgebreid">
+<input type = "text" [(ngModel)]="ImgUrl" placeholder="ImgUrl">
+
+<input type = "number" [(ngModel)]="Quantity" placeholder="Aantal">
+<input type = "number" [(ngModel)]="Price" placeholder="Prijs">
+
+
+
+<button (click)="Post()" class="btn btn-dark" type="submit">Toevoegen</button>
+</div>
+</body>

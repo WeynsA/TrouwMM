@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Italianno");
+
+p {
+   font-family: 'Italianno', serif;
+   font-size: 108px;
+   text-align: center;
+   text-shadow: 4px 4px 5px #aba;   
+}
