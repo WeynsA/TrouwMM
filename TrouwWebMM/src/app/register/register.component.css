@@ -1,0 +1,6 @@
+.anyClass{
+    height:250px;
+    overflow-y: scroll;
+    border-radius: 1em;
+    border-color: black;
+}

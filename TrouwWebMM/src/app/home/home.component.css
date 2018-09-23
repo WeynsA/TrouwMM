@@ -1,8 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Italianno");
 
-p {
+.title {
    font-family: 'Italianno', serif;
    font-size: 108px;
    text-align: center;
    text-shadow: 4px 4px 5px #aba;   
+}
+
+.intro {
+    text-decoration: aqua;
+    font-style: italic;
+}
+
+img {
+    border-radius: 10em;
+    width:350px;
+    height:350px;
 }

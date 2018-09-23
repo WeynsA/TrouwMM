@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   }
   
   register = [
-    new Item(1, 'Tequilla', 10, 'Doodgaan na Marathon', 200, false),
+    new Item(1, 'Tequilla', 10, 'Trouw vergeten', 200, false),
     new Item(2, 'Message', 1, 'Relaxen in een spa', 190, false),
   ];
 
@@ -44,6 +44,7 @@ export class RegisterComponent implements OnInit {
 
   public DeleteCartItem(Items: any){
     this.bedrag -= Items.price;
+    // console.log(Items.price)
     this.checkOutCart.splice(Items, 1);
   }
 
