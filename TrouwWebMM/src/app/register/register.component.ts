@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from "../class/Items";
 import { Router } from "@angular/router";
 import { Subject } from 'rxjs';
+import { i18nExpMapping } from '@angular/core/src/render3/i18n';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,8 @@ import { Subject } from 'rxjs';
 })
 export class RegisterComponent implements OnInit {
   products: Item[];
-  upProducts: Item[] = [];
+  checkOutCart = [];
+
   selectedProduct : Subject<any> = new Subject;
   total: number = 0;
   
@@ -68,18 +70,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-  // register = [
-  //   new Item(1, 'Tequilla', 10, 'Trouw vergeten', 200),
-  //   new Item(2, 'Message', 1, 'Relaxen in een spa', 190),
-  // ];
 
-  checkOutCart = [];
-  // overbodig
-  // public Remove(removeItem: any){
-  //   if (this.bedrag > 0)
-  //   this.bedrag -= removeItem.price;
-  // }
 
   TotalPrice(){
     this.total = 0;
@@ -90,17 +81,15 @@ export class RegisterComponent implements OnInit {
   }
 
   public AddToCart(selectedItem: any) {
-    this.bedrag += selectedItem.price;
     this.checkOutCart.push(selectedItem);  
     this.TotalPrice();
   }
 
-  public DeleteCartItem(selectedItem: any){
-    this.bedrag -= selectedItem.price;
-    // console.log(Items.price)
-    this.checkOutCart.splice(selectedItem, 1);
-    this.TotalPrice();
-  }
+  public DeleteCartItem(selectedItem: number){
+    const index: number = this.checkOutCart.indexOf(selectedItem)
+    if (index !== -1)
+      this.checkOutCart.splice(index,1);
+    this.TotalPrice();}
 
   public CheckOut(eindBedrag: number, cart: any){
     eindBedrag = this.bedrag;
