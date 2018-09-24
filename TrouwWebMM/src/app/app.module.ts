@@ -8,6 +8,8 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { RegisteraddService} from "./services/registeradd.service";
+
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
     NavComponent,
     HomeComponent,
     RegisterComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    
   ],
   imports: [
     BrowserModule,

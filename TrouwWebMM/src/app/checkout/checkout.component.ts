@@ -12,4 +12,7 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
   }
 
+  getItemsInCart(eindbedrag:number){
+
+  }
 }
