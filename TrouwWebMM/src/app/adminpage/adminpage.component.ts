@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Gift, GiftsdbService } from "../services/giftsdb.service";
 
 @Component({
   selector: 'app-adminpage',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminpage.component.css']
 })
 export class AdminpageComponent implements OnInit {
+  data : Gift[];
 
-  constructor() { }
+
+
+  constructor(private svc: GiftsdbService) {}
 
   ngOnInit() {
+    this.GetFullGiftList();
+  }
+  GetFullGiftList = () => {
+    this.svc.getGiftList().subscribe(data => {this.data = data; console.log(data)})
   }
 
 }

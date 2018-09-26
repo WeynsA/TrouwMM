@@ -16,7 +16,8 @@ import { AdminpageComponent } from './adminpage/adminpage.component'
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'checkout', component: CheckoutComponent },  
+  { path: 'checkout', component: CheckoutComponent }, 
+  { path: 'admin', component: AdminpageComponent }, 
   { path: '**', component: HomeComponent }
 ];
 

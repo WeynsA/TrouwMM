@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 
 let apiRegister = express.Router();
 
-app.use('/api/register', apiRegister);
+app.use('/api/register/resterend', apiRegister);
 
 apiRegister
   .get('/', (req, res) => {
@@ -57,10 +57,11 @@ apiRegister
         res.json("OK");
     })
   })
-  
-  app.use('/api/betaald', apiRegister);
 
-  apiRegister
+  let apiGifts = express.Router();
+  app.use('/api/register/verkocht' , apiGifts);
+
+  apiGifts
   .get('/', (req, res) => {
     var query = req.query;
     db.collection('verkocht').find(query).toArray(function (err, result) { 

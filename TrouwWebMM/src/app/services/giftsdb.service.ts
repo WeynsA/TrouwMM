@@ -10,8 +10,8 @@ export class GiftsdbService {
 
   constructor(private http:HttpClient) {}
 
-  getRegister() {
-    return this.http.get<Gift[]>("http://localhost:3000/api/register")
+  getGiftList() {
+    return this.http.get<Gift[]>("http://localhost:3000/api/register/verkocht")
   }
   setUsers (gifts: Gift[]){
     this.myGifts = gifts

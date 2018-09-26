@@ -13,10 +13,10 @@ export class RegisteraddService {
   constructor(private http:HttpClient) {}
 
   getRegister() {
-    return this.http.get<RegisterItem[]>("http://localhost:3000/api/register")
+    return this.http.get<RegisterItem[]>("http://localhost:3000/api/register/resterend")
   }
-  setUsers (users: RegisterItem[]){
-    this.myRegister = users
+  setUsers (items: RegisterItem[]){
+    this.myRegister = items
   }
 
 }

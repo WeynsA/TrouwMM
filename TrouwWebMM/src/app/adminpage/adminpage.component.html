@@ -1,3 +1,28 @@
-<p>
-  adminpage works!
-</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">Naam</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Message</th>
+        <th scope="col">Gift</th>
+        <th scope="col">Prijs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let registerItem of data'>
+        <!-- <th scope="row">{{registerItem.id}}</th> -->
+        <th>{{registerItem.namePerson}}</th>
+        <td>{{registerItem.emailPerson}}</td>
+        <td>{{registerItem.messagePerson}}</td>
+        <td>{{registerItem.gift}}</td>
+        <td>{{registerItem.price}}</td>
+        <td style="width: 20px"><div class="checkbox">
+          <label><input type="checkbox" value=""></label>
+        </div></td>
+        <!-- <td><button (click)="Remove(registerItem)"><i class="fa fa-trash"></i></button></td>  !!Overbodig!!§-->
+
+      </tr>
+    </tbody>
+  </table>
