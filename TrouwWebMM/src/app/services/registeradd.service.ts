@@ -1,30 +1,29 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Item } from '../class/Items';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisteraddService {
+  myRegister: RegisterItem[];
+  private baseUrl = "http://localhost:3000/api/register"
 
   constructor(private http:HttpClient) {}
 
-  // GetItems() : Observable<Item>{
-    
-  // }
+  getRegister() {
+    return this.http.get<RegisterItem[]>("http://localhost:3000/api/register")
+  }
+  setUsers (users: RegisterItem[]){
+    this.myRegister = users
+  }
 
-  // GetShoppingCartItems() : Observable<
-
-  // result: any;
-  // public bedrag: number = 0;
-  // public tussenkomst: number;
 }
 
-export interface Item{
+export interface RegisterItem{
   name: string 
-  context: string ;
-  imgUrl: string;
-  price: number;
-  quantity: number;
+  description: string ;
+  price: string;
+  quantity: string;
 }

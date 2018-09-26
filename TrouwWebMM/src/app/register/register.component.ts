@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from "../class/Items";
 import { Router } from "@angular/router";
 import { Subject } from 'rxjs';
-import { i18nExpMapping } from '@angular/core/src/render3/i18n';
+import { RegisterItem, RegisteraddService } from "../services/registeradd.service";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -22,55 +23,35 @@ export class RegisterComponent implements OnInit {
 
   private id: number;
   private name: string = "";
-  private context: string = "";
+  private description: string = "";
   private imgUrl: string = "";
   private price: number = 0;
   private quantity: number = 0;
   
+  data: RegisterItem[];
 
-  constructor(private router: Router) { 
-    this.products = [
-      {
-        id: 1,
-        name: 'Tequilla',
-        quantity: 10,
-        context: 'Trouw vergeten',
-        price: 200
-      },
-      {
-        id: 2,
-        name: 'Ring',
-        quantity: 4,
-        context: 'Iets om te ringen',
-        price: 4000
-      },
-      {
-        id: 3,
-        name: 'Toaster',
-        quantity: 1,
-        context: 'Iets om te toasten',
-        price: 620
-      },
-      {
-        id: 4,
-        name: 'Auto',
-        quantity: 2,
-        context: 'Iets om te rijden',
-        price: 92000
-      },
-      {
-        id: 5,
-        name: 'Broodmaker',
-        quantity: 2,
-        context: 'Iets om brood te maken',
-        price: 495
-      },
-    ];
-  }
+  constructor(private router: Router, private svc: RegisteraddService, private http:HttpClient) {}
 
   ngOnInit() {
+    this.GetFullRegister();
   }
 
+  GetFullRegister = () => {
+    this.svc.getRegister().subscribe(data => {this.data = data; console.log(data[0].name)}); 
+  }
+
+  putItem(){
+    this.http.put('http://localhost:3000/api/register', {
+      Id: this.id,
+      name: this.name,
+      description: this.description,
+      price: this.price,
+      quantity: this.quantity
+    })
+    .subscribe((data: any)=>{
+      console.log(data)
+    })
+  }
 
   TotalPrice(){
     this.total = 0;
@@ -100,16 +81,6 @@ export class RegisterComponent implements OnInit {
     console.log(eindBedrag, cart)
   }
 
-  public Post(){
-    this.setId();
-    console.log(this.name, this.context, this.imgUrl, this.quantity, this.price)
-    this.products.push({id: this.setId(), 
-      name: this.name, 
-      quantity: this.quantity, 
-      context: this.context, 
-      price: this.price});
-    console.log(this.products)
-  }
 
 // VALUE SETTING
   setId(){
@@ -128,11 +99,11 @@ export class RegisterComponent implements OnInit {
   set Price(value: number) {
     this.price = value;
   }
-  get Context() {
-    return this.context;
+  get Description() {
+    return this.description;
   }
-  set Context(value: string) {
-    this.context = value;
+  set Description(value: string) {
+    this.description = value;
   }
   get Quantity() {
     return this.quantity;
@@ -147,3 +118,17 @@ export class RegisterComponent implements OnInit {
     this.imgUrl = value;
   }
 }
+
+
+
+
+  // public Post(){
+  //   this.setId();
+  //   console.log(this.name, this.description, this.imgUrl, this.quantity, this.price)
+  //   this.products.push({id: this.setId(), 
+  //     name: this.name, 
+  //     quantity: this.quantity, 
+  //     description: this.description, 
+  //     price: this.price});
+  //   console.log(this.products)
+  // }

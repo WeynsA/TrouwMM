@@ -1,25 +1,22 @@
 <body>
-  <!-- <li *ngFor='let item of register'>
-    {{item.name}}
-  </li> -->
-
+  <!-- BEGIN REGISTER -->
 
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <!-- <th scope="col">#</th> -->
         <th scope="col">Naam</th>
         <th scope="col">Hoeveelheid</th>
-        <th scope="col">Context</th>
+        <th scope="col">Description</th>
         <th scope="col">Prijs</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let registerItem of products'>
-        <th scope="row">{{registerItem.id}}</th>
-        <td>{{registerItem.name}}</td>
+      <tr *ngFor='let registerItem of data'>
+        <!-- <th scope="row">{{registerItem.id}}</th> -->
+        <th>{{registerItem.name}}</th>
         <td>{{registerItem.quantity}}</td>
-        <td>{{registerItem.context}}</td>
+        <td>{{registerItem.description}}</td>
         <td>{{registerItem.price}}</td>
         <td style="width: 20px"><button (click)="AddToCart(registerItem)" class="btn btn-link"><i class="fa fa-plus"></i></button></td>
         <!-- <td><button (click)="Remove(registerItem)"><i class="fa fa-trash"></i></button></td>  !!Overbodig!!§-->
@@ -27,6 +24,8 @@
       </tr>
     </tbody>
   </table>
+  <!-- EINDE REGISTER -->
+  <!-- BEGIN CHECKOUT CART -->
 
   <div class='d-flex justify-content-center align-items-center' *ngIf="this.checkOutCart.length > 0">
     <div class="col-md4 order-md-2 mb-4" style="background-color: white; border-radius: 20px; padding: 9px">
@@ -48,17 +47,18 @@
   </div>
 
 
-  <div class="card" style="width: 350px;" *ngIf="this.bedrag==200" style="margin-top: 100px">
+  <!-- EINDE CHECKOUT CART -->
+  <!-- BEGIN TOEVOEGING REGISTER -->
+  <div class="card" style="width: 350px;" *ngIf="this.total==200" style="margin-top: 100px">
 
     <input type="text" [(ngModel)]="Name" placeholder="Naam">
-    <input type="text" [(ngModel)]="Context" placeholder="Uitgebreid">
+    <input type="text" [(ngModel)]="Description" placeholder="Uitgebreid">
     <input type="text" [(ngModel)]="ImgUrl" placeholder="ImgUrl">
-
     <input type="number" [(ngModel)]="Quantity" placeholder="Aantal">
     <input type="number" [(ngModel)]="Price" placeholder="Prijs">
 
+    <button (click)="putItem()" class="btn btn-dark" type="submit">Toevoegen</button>
+   <!-- EINDE TOEVOEGING REGISTER -->
 
-
-    <button (click)="Post()" class="btn btn-dark" type="submit">Toevoegen</button>
   </div>
 </body>

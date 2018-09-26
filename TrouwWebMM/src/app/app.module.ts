@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RegisteraddService} from "./services/registeradd.service";
+import { HttpClientModule} from '@angular/common/http';
+import { AdminpageComponent } from './adminpage/adminpage.component'
 
 
 const appRoutes: Routes = [
@@ -26,10 +28,12 @@ const appRoutes: Routes = [
     HomeComponent,
     RegisterComponent,
     CheckoutComponent,
+    AdminpageComponent,
     
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { useHash: true }
