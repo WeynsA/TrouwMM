@@ -1,21 +1,106 @@
-<p class="title">Matthias & Michèle!</p>
-
+<div #headDiv class="headDiv">
 <div class= "hoofding">
-<img class="fotoLinks" src="assets/images/happymat.PNG">
-<img class="fotoRechts" src="assets/images/unhappymich.jpg">
+<img class="fotoLinks" src="assets/images/matthias_bovenaan.jpg">
+<img class="fotoMidden" src="assets/images/michenmat.PNG">
+<img class="fotoRechts" src="assets/images/michele_bovenaan.jpg">
+<!-- <p class="title">Michèle & Matthias</p> -->
+</div>
 </div>
 
-<div class="intro">Wij trouwen op 9 Februari 2019. Ipsum Lorem voor derest ej.</div>
+<div class="lijn"></div>
+<div class="middenPaneel">
 
-<div class="nuttigeInfo">
-<div class="locatie">Trouw voor de kerk zal plaatsvinden te Antwerpen in de Onze-Lieve-Vrouwekathedraal
-</div>
-<div class="map"><agm-map [latitude]="51.199413" [longitude]="4.396635" [zoom]=12>
-    <agm-marker [latitude]="51.220413" [longitude]="4.401535"></agm-marker>
-    <agm-marker [latitude]="51.168820" [longitude]="4.394459"></agm-marker>
-    <agm-marker [latitude]="51.221533" [longitude]="4.399096" (mouseOver)=showLetter()></agm-marker>
-  </agm-map>
-</div>
 
-</div>
+<li>
+  <ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-body">
+         <ul>
+           <li (click)="moveToTop()"><a>Top</a></li>
+           <li (click)="moveToKerkHuwelijk()"><a>Kerkelijk huwelijk</a></li>
+           <li (click)="moveToReceptie()"><a>Receptie</a></li>
+           <li (click)="moveToAvondfeest()"><a>Avondfeest</a></li>
+           <li (click)="moveToDresscode()"><a>Dresscode</a></li>
+           <li (click)="moveToRSVP()"><a>RSVP</a></li>
+         </ul>
+      </div>
+    </li>
+   </ul>
+ </li>
 
+
+<!-- <div #intro id="intro" class="intro">Wij trouwen op 9 Februari 2019. Ipsum Lorem voor derest ej.</div>
+</div> -->
+<div class="banner"><img class="banner" src="../../assets/images/banner_1.jpg"></div>
+<div class="middenPaneel">
+<div #kerkHuwelijk class="kerkelijkHuwelijk">
+<div class="infoKerkelijkHuwelijk">Trouw voor de kerk zal plaatsvinden te Antwerpen in de Onze-Lieve-Vrouwekathedraal
+</div>
+<div class="locatieKerkelijkHuwelijk">
+<div class="map"><agm-map [latitude]="latKerk" [longitude]="lngKerk" [zoom]=17>
+    <agm-marker [latitude]="latKerk" [longitude]="lngKerk"></agm-marker></agm-map>
+</div>
+</div> 
+</div>
+<div class="banner"><img class="banner" src="../../assets/images/banner_2.jpg"></div>
+
+<div #receptie class="receptie">
+  <div class="infoReceptie">
+    Receptie zal plaatsvinden na kerkdienst in de Bourla.
+  </div>
+  <div class="locatieReceptie">
+      <div class="map"><agm-map [latitude]="latReceptie" [longitude]="lngReceptie" [zoom]=17>
+          <agm-marker [latitude]="latReceptie" [longitude]="lngReceptie">
+            </agm-marker>
+          </agm-map>
+      </div>
+  </div>
+</div>
+<div class="banner"><img class="banner" src="../../assets/images/banner_3.jpg"></div>
+
+<div #avondfeest class="avondfeest">
+    <div class="infoAvondFeest">
+      Avondfeest zal plaatsvinden rond 20u te wilrijk.
+    </div>
+    <div class="locatieAvondfeest">
+        <div class="map"><agm-map [latitude]="latAvondfeest" [longitude]="lngAvondfeest" [zoom]=17>
+            <agm-marker [latitude]="latAvondfeest" [longitude]="lngAvondfeest"></agm-marker>
+          </agm-map>
+        </div>
+    </div>
+</div>
+<div class="banner"><img class="banner" src="../../assets/images/banner_4.jpg"></div>
+
+<div #dresscode class="dresscode">
+  <div class="infoDresscode">
+    Dresscode is Casual Party!
+  </div>
+</div>
+<div class="banner"><img class="banner" src="../../assets/images/banner_5.jpg"></div>
+
+<div #RSVP id="RSVP" class="RSVP">
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="rsvpEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Gelieve uw namen hier door te geven.</label>
+          <input type="text" class="form-control" id="rsvpNaam" placeholder="">
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="rsvpAlleen">
+          <label class="form-check-label" for="rsvpAlleen">Ik kom.</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="rsvpPlusOne">
+            <label class="form-check-label" for="rsvpPlusOne">Ik kom met partner.</label>
+          </div>
+          <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="rsvpAlleen">
+              <label class="form-check-label" for="exampleCheck1">Ik kom niet.</label>
+            </div>
+        <button type="submit" class="btn btn-primary">RSVP ME</button>
+      </form>
+</div>
+</div>

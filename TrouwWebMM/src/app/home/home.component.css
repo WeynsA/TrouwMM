@@ -1,63 +1,120 @@
-@import url("https://fonts.googleapis.com/css?family=Italianno");
+@import url("");
+@font-face {
+    font-family: 'collona';
+    src: url(../../assets/fonts/SmartFrocksNF.ttf) format("truetype");
+  }
+.headDiv{
+    padding-top: 40px;
+    background-color:white;    
+}
 
+.hoofding{
+    text-align: auto;
+    align-self: center;
+    /* background-color:lightgray; */
+    height: 295px;
+    margin-top:-20px;
+    background-color:white;
+}
+
+.lijn{
+    width: 960px;
+    border-bottom-style: solid;
+    border-width: 3px;
+    border-color: goldenrod;
+    margin: 0 18.5%;
+}
+.middenPaneel{
+    background-color: #efede3;
+    width: 900px;
+    /* margin-left:18.5%; */
+    margin: -3px auto;
+    border-right-style: double;
+    border-left-style: double;
+    border-width: 12px;
+    
+}
 .title {
-   /* background-image: url('../../assets/images/repeatbackgroundy.png');
-   background-repeat: no-repeat; */
-   font-family: 'Italianno', serif;
-   font-size: 80px;
+   font-family: 'collona', serif;
+   font-size: 8em;
    text-align: center;
-   text-shadow: 4px 4px 5px rgb(184, 187, 170);
    -webkit-text-fill-color:goldenrod;
-   border-bottom-style: solid;
-   border-width: 3px;
-   border-color: goldenrod;
-   margin-right: 12%;
-   margin-left: 12%;
+   /* border-bottom-style: solid; */
+    border-width: 3px;
+    border-color: goldenrod;
+   /* margin-right: 33%; */
+   /* margin-left: 33%; */
+   line-height: 80px;
+   /* background-color:lightslategray; */
 }
 
 .intro {
     margin: 20px;
-    width: 80em; 
+    /* width: 80em; */
     text-align: center;
     align-self: auto;
     text-decoration: aqua;
     font-style: italic;
-    -webkit-text-fill-color: gold;
+    -webkit-text-fill-color: goldenrod;
 }
-.hoofding{
-    text-align: auto;
-    align-self: center;
-}
+
 
 .fotoLinks {
     float:left;
-    width: 20em;
     height: 20em;
+    width: auto;
+    /* margin-left: 18.5%; */
+    margin-top:-25px;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
 }
 
 .fotoRechts{
-    float: right;
-    width: 20em;
+    display: block;
+    float: left;
     height: 20em;
+    width: auto;
+    margin-top:-25px;
+    margin-right: auto;
+    width: auto;
+    /* margin-right: 18.5%; */
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
 }
-
+.fotoMidden{
+    display: block;
+    float:left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+}
 .nuttigeInfo{
     margin-top:20em;
-    margin-left: 10%;
+    /* margin-left: 10%; */
     text-align: left;
 }
 
 .map{
-    margin-left: 50%;
-    border-radius: 50%;
+    /* margin-left: 10%; */
+    /* margin-right: 55%; */
+    margin: 0 auto;
 }
 
 agm-map {
     height: 300px;
-    width: 550px;
+    width: 330px;
+}
 
-  }
+.kerkelijkHuwelijk, .receptie, .avondfeest, .dresscode, .RSVP{
+    /* width: 63%; */
+    margin-left: 20px;
+}
+
+.kerkelijkHuwelijk, .avondfeest, .dresscode{
+    float:left;
+    margin-left: 20px;
+}
+
+.banner{
+    width: 100%;
+}
