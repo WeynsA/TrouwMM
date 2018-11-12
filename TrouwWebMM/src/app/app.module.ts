@@ -11,6 +11,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { RegisteraddService} from "./services/registeradd.service";
 import { HttpClientModule} from '@angular/common/http';
 import { AdminpageComponent } from './adminpage/adminpage.component'
+import { AgmCoreModule } from "@agm/core";
 
 
 const appRoutes: Routes = [
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
     RegisterComponent,
     CheckoutComponent,
     AdminpageComponent,
+
     
   ],
   imports: [
@@ -39,7 +41,10 @@ const appRoutes: Routes = [
       appRoutes,
       { useHash: true }
     ),
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyBCqW3-1sRfO1_aCvsYJSqY7KclRAOJJbI'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

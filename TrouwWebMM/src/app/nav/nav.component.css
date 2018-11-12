@@ -1,3 +1,7 @@
-body {
-    margin-bottom: 55px;
+.navbar-nav{
+    margin: auto;
+}
+
+.navbar-nav a{
+    margin-left: 5em;
 }

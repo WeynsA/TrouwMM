@@ -1,19 +1,63 @@
 @import url("https://fonts.googleapis.com/css?family=Italianno");
 
 .title {
+   /* background-image: url('../../assets/images/repeatbackgroundy.png');
+   background-repeat: no-repeat; */
    font-family: 'Italianno', serif;
-   font-size: 108px;
+   font-size: 80px;
    text-align: center;
-   text-shadow: 4px 4px 5px #aba;   
+   text-shadow: 4px 4px 5px rgb(184, 187, 170);
+   -webkit-text-fill-color:goldenrod;
+   border-bottom-style: solid;
+   border-width: 3px;
+   border-color: goldenrod;
+   margin-right: 12%;
+   margin-left: 12%;
 }
 
 .intro {
+    margin: 20px;
+    width: 80em; 
+    text-align: center;
+    align-self: auto;
     text-decoration: aqua;
     font-style: italic;
+    -webkit-text-fill-color: gold;
+}
+.hoofding{
+    text-align: auto;
+    align-self: center;
 }
 
-img {
-    border-radius: 10em;
-    width:350px;
-    height:350px;
+.fotoLinks {
+    float:left;
+    width: 20em;
+    height: 20em;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
 }
+
+.fotoRechts{
+    float: right;
+    width: 20em;
+    height: 20em;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.nuttigeInfo{
+    margin-top:20em;
+    margin-left: 10%;
+    text-align: left;
+}
+
+.map{
+    margin-left: 50%;
+    border-radius: 50%;
+}
+
+agm-map {
+    height: 300px;
+    width: 550px;
+
+  }

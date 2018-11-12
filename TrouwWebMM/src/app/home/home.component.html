@@ -1,12 +1,21 @@
+<p class="title">Matthias & Michèle!</p>
 
-<body>
-  <p class="title">Matthias & Michèle Van Spilbeeck!</p>
-  <p>TEKST</p>
-</body>
-<div style="margin: auto; width: 75%">
-<img src="assets/images/happymat.PNG">
-<i class="fa fa-plus fa-5x"></i>
-<img src="assets/images/unhappymich.jpg">
-<i class="fa fa-arrow-right fa-5x"></i>
-<img src="assets/images/koppeltje.jpg">
-</div>  
+<div class= "hoofding">
+<img class="fotoLinks" src="assets/images/happymat.PNG">
+<img class="fotoRechts" src="assets/images/unhappymich.jpg">
+</div>
+
+<div class="intro">Wij trouwen op 9 Februari 2019. Ipsum Lorem voor derest ej.</div>
+
+<div class="nuttigeInfo">
+<div class="locatie">Trouw voor de kerk zal plaatsvinden te Antwerpen in de Onze-Lieve-Vrouwekathedraal
+</div>
+<div class="map"><agm-map [latitude]="51.199413" [longitude]="4.396635" [zoom]=12>
+    <agm-marker [latitude]="51.220413" [longitude]="4.401535"></agm-marker>
+    <agm-marker [latitude]="51.168820" [longitude]="4.394459"></agm-marker>
+    <agm-marker [latitude]="51.221533" [longitude]="4.399096" (mouseOver)=showLetter()></agm-marker>
+  </agm-map>
+</div>
+
+</div>
+

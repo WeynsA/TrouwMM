@@ -15,7 +15,7 @@
       <tr *ngFor='let registerItem of data'>
         <!-- <th scope="row">{{registerItem.id}}</th> -->
         <th>{{registerItem.name}}</th>
-        <td>{{registerItem.quantity}}</td>
+        <td>{{registerItem.quantity}}/{{registerItem.quantity}}</td>
         <td>{{registerItem.description}}</td>
         <td>{{registerItem.price}}</td>
         <td style="width: 20px"><button (click)="AddToCart(registerItem)" class="btn btn-link"><i class="fa fa-plus"></i></button></td>
