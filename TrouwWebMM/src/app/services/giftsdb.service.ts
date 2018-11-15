@@ -6,12 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GiftsdbService {
  myGifts: Gift[];
-  private baseUrl = "http://localhost:3000/api/verkocht"
+  private baseUrl = "https://trouwmmapi.azurewebsites.net/api/resterend"
 
   constructor(private http:HttpClient) {}
 
   getGiftList() {
-    return this.http.get<Gift[]>("http://localhost:3000/api/register/verkocht")
+    return this.http.get<Gift[]>("https://trouwmmapi.azurewebsites.net/api/resterend/verkocht")
   }
   setUsers (gifts: Gift[]){
     this.myGifts = gifts
@@ -20,9 +20,9 @@ export class GiftsdbService {
 
 
 export interface Gift{
-  gift: string;
-  price: string;
-  namePerson: string;
-  emailPerson: string;
-  messagePerson: string;
+  Name: string;
+  Amount: string;
+  FirstName: string;
+  LastName: string;
+  Message: string;
 }

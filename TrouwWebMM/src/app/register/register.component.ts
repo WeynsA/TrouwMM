@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { Subject } from 'rxjs';
 import { RegisterItem, RegisteraddService } from "../services/registeradd.service";
 import { HttpClient } from '@angular/common/http';
+import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 
 @Component({
   selector: 'app-register',
@@ -24,9 +25,10 @@ export class RegisterComponent implements OnInit {
   private id: number;
   private name: string = "";
   private description: string = "";
-  private imgUrl: string = "";
+  private pictureUrl: string = "";
   private price: number = 0;
   private quantity: number = 0;
+  private sold: number = 0;
   
   data: RegisterItem[];
 
@@ -37,20 +39,22 @@ export class RegisterComponent implements OnInit {
   }
 
   GetFullRegister = () => {
-    this.svc.getRegister().subscribe(data => {this.data = data; console.log(data[0].name)}); 
+    this.svc.getRegister().subscribe(data => {this.data = data; console.log(data[0].sold)}); 
   }
 
-  putItem(){
-    this.http.put('http://localhost:3000/api/register', {
+  postItem(){
+    this.http.post('https://trouwmmapi.azurewebsites.net/api/resterend', {
       Id: this.id,
       name: this.name,
       description: this.description,
       price: this.price,
-      quantity: this.quantity
+      quantity: this.quantity,
+      sold: this.sold,
+      pictureUrl: this.pictureUrl,
     })
     .subscribe((data: any)=>{
-      console.log(data)
     })
+    //window.location.reload();
   }
 
   TotalPrice(){
@@ -111,11 +115,17 @@ export class RegisterComponent implements OnInit {
   set Quantity(value: number) {
     this.quantity = value;
   }
-  get ImgUrl() {
-    return this.imgUrl;
+  get Sold() {
+    return this.sold;
   }
-  set ImgUrl(value: string) {
-    this.imgUrl = value;
+  set Sold(value: number) {
+    this.sold = value;
+  }
+  get PictureUrl() {
+    return this.pictureUrl;
+  }
+  set PictureUrl(value: string) {
+    this.pictureUrl = value;
   }
 }
 
@@ -124,7 +134,7 @@ export class RegisterComponent implements OnInit {
 
   // public Post(){
   //   this.setId();
-  //   console.log(this.name, this.description, this.imgUrl, this.quantity, this.price)
+  //   console.log(this.name, this.description, this.pictureUrl, this.quantity, this.price)
   //   this.products.push({id: this.setId(), 
   //     name: this.name, 
   //     quantity: this.quantity, 

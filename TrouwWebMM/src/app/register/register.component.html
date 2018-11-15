@@ -8,6 +8,7 @@
         <th scope="col">Naam</th>
         <th scope="col">Hoeveelheid</th>
         <th scope="col">Description</th>
+        <th scope="col">Foto</th>
         <th scope="col">Prijs</th>
       </tr>
     </thead>
@@ -15,8 +16,9 @@
       <tr *ngFor='let registerItem of data'>
         <!-- <th scope="row">{{registerItem.id}}</th> -->
         <th>{{registerItem.name}}</th>
-        <td>{{registerItem.quantity}}/{{registerItem.quantity}}</td>
+        <td>{{registerItem.sold}}/{{registerItem.quantity}}</td>
         <td>{{registerItem.description}}</td>
+        <td><img style="height: 50px; width: 50px;" src="{{registerItem.pictureUrl}}" alt=""></td>
         <td>{{registerItem.price}}</td>
         <td style="width: 20px"><button (click)="AddToCart(registerItem)" class="btn btn-link"><i class="fa fa-plus"></i></button></td>
         <!-- <td><button (click)="Remove(registerItem)"><i class="fa fa-trash"></i></button></td>  !!Overbodig!!§-->
@@ -49,16 +51,17 @@
 
   <!-- EINDE CHECKOUT CART -->
   <!-- BEGIN TOEVOEGING REGISTER -->
+
   <div class="card" style="width: 350px;" *ngIf="this.total==200" style="margin-top: 100px">
 
     <input type="text" [(ngModel)]="Name" placeholder="Naam">
     <input type="text" [(ngModel)]="Description" placeholder="Uitgebreid">
-    <input type="text" [(ngModel)]="ImgUrl" placeholder="ImgUrl">
+    <input type="text" [(ngModel)]="PictureUrl" placeholder="PictureUrl">
     <input type="number" [(ngModel)]="Quantity" placeholder="Aantal">
     <input type="number" [(ngModel)]="Price" placeholder="Prijs">
-
-    <button (click)="putItem()" class="btn btn-dark" type="submit">Toevoegen</button>
+    <button (click)="postItem()" class="btn btn-dark" type="submit">Toevoegen</button>
    <!-- EINDE TOEVOEGING REGISTER -->
 
   </div>
+
 </body>

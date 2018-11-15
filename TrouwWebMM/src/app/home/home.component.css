@@ -1,83 +1,53 @@
-@import url("");
 @font-face {
     font-family: 'collona';
     src: url(../../assets/fonts/SmartFrocksNF.ttf) format("truetype");
   }
-.headDiv{
-    padding-top: 40px;
-    background-color:white;    
+  .headDiv{
+    padding-top: 20px;
+    background-color:white;   
+    border-style: none;
 }
-
 .hoofding{
-    text-align: auto;
-    align-self: center;
-    /* background-color:lightgray; */
     height: 295px;
-    margin-top:-20px;
     background-color:white;
+    width: 900px;
+    margin: 0 auto;
 }
-
 .lijn{
-    width: 960px;
     border-bottom-style: solid;
     border-width: 3px;
     border-color: goldenrod;
-    margin: 0 18.5%;
+    background-color: black;
 }
 .middenPaneel{
     background-color: #efede3;
     width: 900px;
-    /* margin-left:18.5%; */
-    margin: -3px auto;
+    margin: 0 auto;
     border-right-style: double;
     border-left-style: double;
-    border-width: 12px;
-    
+    border-width: 12px;    
 }
-.title {
-   font-family: 'collona', serif;
-   font-size: 8em;
-   text-align: center;
-   -webkit-text-fill-color:goldenrod;
-   /* border-bottom-style: solid; */
-    border-width: 3px;
-    border-color: goldenrod;
-   /* margin-right: 33%; */
-   /* margin-left: 33%; */
-   line-height: 80px;
-   /* background-color:lightslategray; */
-}
-
 .intro {
-    margin: 20px;
-    /* width: 80em; */
     text-align: center;
     align-self: auto;
     text-decoration: aqua;
-    font-style: italic;
-    -webkit-text-fill-color: goldenrod;
+    /* font-style: italic; */
 }
-
-
 .fotoLinks {
     float:left;
     height: 20em;
     width: auto;
-    /* margin-left: 18.5%; */
     margin-top:-25px;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
 }
-
 .fotoRechts{
     display: block;
-    float: left;
+    float: right;
     height: 20em;
     width: auto;
     margin-top:-25px;
-    margin-right: auto;
     width: auto;
-    /* margin-right: 18.5%; */
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
 }
@@ -86,35 +56,111 @@
     float:left;
     margin-left: auto;
     margin-right: auto;
-    width: 45%;
+    width: 50%;
+    margin: 0 auto;
 }
 .nuttigeInfo{
     margin-top:20em;
-    /* margin-left: 10%; */
     text-align: left;
 }
-
-.map{
-    /* margin-left: 10%; */
-    /* margin-right: 55%; */
-    margin: 0 auto;
-}
-
 agm-map {
     height: 300px;
     width: 330px;
 }
 
-.kerkelijkHuwelijk, .receptie, .avondfeest, .dresscode, .RSVP{
-    /* width: 63%; */
-    margin-left: 20px;
+.locatieReceptie{
+    float: right;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-width:2px;
+    border-radius: 20%;
 }
-
-.kerkelijkHuwelijk, .avondfeest, .dresscode{
-    float:left;
+.locatieAvondfeest, .locatieKerkelijkHuwelijk{
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 20px;
     margin-left: 20px;
+    border-style: solid;
+    border-width:2px;
+    border-radius: 20%;
 }
-
 .banner{
     width: 100%;
 }
+#homeNav{
+    width: 876px;
+    height: 30px;
+    margin:0 auto -10px;
+}
+a{
+    font-size: 12px;
+}
+.collapsible-body{
+
+    margin: 0 auto;
+}
+.RSVP{
+    height: 320px;
+    width: 400px;
+    margin-left: 20px;
+}
+
+.receptieBol{
+    width: 210px;
+    height: 210px;
+    float:left;
+    margin-left:115px;
+    margin-top: 60px;
+    background-color: snow;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    -webkit-text-fill-color: rgb(137, 200, 241);
+    font-size: 2em;
+    line-height:1em;
+    border-radius: 100%;
+    text-align: center;
+    padding: 35px 0;
+}
+
+.kerkBol{
+    width: 180px;
+    height: 180px;
+    float:right;
+    margin-right:150px;
+    margin-top: 40px;
+    background-color: snow;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    -webkit-text-fill-color: rgb(137, 200, 241);
+    font-size: 2em;
+    line-height:1em;
+    border-radius: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+.avondfeestBol{
+    width: 200px;
+    height: 200px;
+    float:right;
+    margin-right:135px;
+    margin-top: 60px;
+    background-color: snow;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    -webkit-text-fill-color: rgb(137, 200, 241);
+    font-size: 2em;
+    line-height:1em;
+    border-radius: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+text {
+    fill:  rgb(137, 200, 241);
+    letter-spacing: 5px;
+  }
+
+path {
+  fill: rgb(254, 255, 255);;
+}
+
+
+

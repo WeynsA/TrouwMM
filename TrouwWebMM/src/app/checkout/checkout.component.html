@@ -1,3 +1,22 @@
-<p>
-  checkout works!
-</p>
+<body><div id="giftFrom" class="giftFrom">
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address:</label>
+      <input type="email" class="form-control" id="giftEmail" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="giftFirstName">Voornaam:</label>
+      <input type="text" class="form-control" id="giftFirstName" placeholder="">
+    </div>
+    <div class="form-group">
+      <label class="form-check-label" for="giftLastName">Achternaam:</label>
+      <input type="text" class="form-control" id="giftLastName">
+    </div>
+    <div class="form-group">
+      <label class="form-check-label" for="giftMessage">Laat hier een berichtje aan ons achter:</label>
+      <textarea type="text" class="form-control" id="giftMessage" rows="6"></textarea>
+    </div>    
+    <button type="submit" (Click)="sendMessage()" class="btn btn-white">Verstuur bericht</button>
+
+  </form>
+</div></body>

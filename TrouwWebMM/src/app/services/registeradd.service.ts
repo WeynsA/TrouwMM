@@ -8,13 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class RegisteraddService {
   myRegister: RegisterItem[];
-  private baseUrl = "http://localhost:3000/api/register"
+  private baseUrl = "https://trouwmmapi.azurewebsites.net/api/resterend"
 
   constructor(private http:HttpClient) {}
 
   getRegister() {
-    return this.http.get<RegisterItem[]>("http://localhost:3000/api/register/resterend")
+    return this.http.get<RegisterItem[]>("https://trouwmmapi.azurewebsites.net/api/resterend");
+
   }
+
   setUsers (items: RegisterItem[]){
     this.myRegister = items
   }
@@ -26,4 +28,6 @@ export interface RegisterItem{
   description: string ;
   price: string;
   quantity: string;
+  imgUrl: string;
+  sold: string;
 }

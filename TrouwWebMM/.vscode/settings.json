@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/60df04e9-8bd9-4915-995d-0cf556aa5464/resourceGroups/trouwmm/providers/Microsoft.Web/sites/trouwmm",
+    "appService.deploySubpath": "dist\\TrouwWebMM"
+}
