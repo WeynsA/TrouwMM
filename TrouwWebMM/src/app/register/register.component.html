@@ -1,35 +1,74 @@
 <body>
+
+  <!-- BEGIN TOEVOEGING REGISTER -->
+<!-- 
+  <div class="card" style="width: 350px;" *ngIf="200==200" style="margin-top: 100px">
+
+    <span>Naam</span>
+    <input type="text" [(ngModel)]="Name" placeholder="Naam"><br>
+
+    <span>Beschrijving van wat het juist is/wat ge gaat doen.</span>
+    <input type="text" [(ngModel)]="Description" placeholder="Uitgebreid"><br>
+
+    <span>Adres van afbeelding kopiëen</span>
+    <input type="text" [(ngModel)]="PictureUrl" placeholder="PictureUrl"><br>
+
+    <span>Hoeveelheid</span>
+    <input type="number" [(ngModel)]="Quantity" placeholder="Aantal"><br>
+    <span>Prijs</span>
+    <input type="number" [(ngModel)]="Price" placeholder="Prijs"><br>
+    <button (click)="postItem()" class="btn btn-primary" type="submit">Toevoegen</button></div> -->
+  <!-- EINDE TOEVOEGING REGISTER -->
+  <p>
+    Na alle drukte van onze trouw willen wij met z’n tweeën gaan ontspannen in de bergen en steden
+    van het prachtige Japan. Michèle wil in een kimono rondlopen, Matthias wil met katana’s en
+    wakizashi’s rondzwaaien en beiden willen graag Pokémon vangen in hun natuurlijke habitat. Indien u
+    wenst, kan u op deze pagina - volledig vrijblijvend uiteraard - een bijdrage schenken voor onze
+    huwelijksreis.
+  </p>
+
+  <p>
+    Omdat een kluis in Gringott’s voor ons niet toegankelijk is en een draak leasen op korte termijn even
+    duur blijkt als een parkeerboete in Gent, is de betalingsmethode van onze keuze een rekening bij
+    Argenta geworden. Laat ons zeggen dat het bijna even veilig en mogelijk toegankelijker is.
+  </p>
+  <p>
+    De rekening:
+<br>Weyns-Van Spilbeeck<br>
+BE23 9731 5176 2291
+  </p>
   <!-- BEGIN REGISTER -->
 
-  <table class="table">
+  <table class="table table-hover" style="width: 900px;">
     <thead>
       <tr>
         <!-- <th scope="col">#</th> -->
         <th scope="col">Naam</th>
         <th scope="col">Hoeveelheid</th>
-        <th scope="col">Description</th>
+        <!-- <th scope="col">Description</th> -->
         <th scope="col">Foto</th>
         <th scope="col">Prijs</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let registerItem of data'>
+      <tr *ngFor="let registerItem of data; let $index=index;" style="width: 200px;">
+        <td (click)="expandRow($index)" style="width:50%;">
+          <div (click)="expandRow($index)" (click)="expandRow($index)">{{registerItem.name}}</div>
+          <span *ngIf="$index === expandedIndex">{{registerItem.description}}</span>
+        </td>
         <!-- <th scope="row">{{registerItem.id}}</th> -->
-        <th>{{registerItem.name}}</th>
-        <td>{{registerItem.sold}}/{{registerItem.quantity}}</td>
-        <td>{{registerItem.description}}</td>
-        <td><img style="height: 50px; width: 50px;" src="{{registerItem.pictureUrl}}" alt=""></td>
-        <td>{{registerItem.price}}</td>
+        <!-- <td>{{registerItem.name}}</td> -->
+        <td (click)="expandRow($index)">{{registerItem.sold}}/{{registerItem.quantity}}</td>
+        <!-- <td>{{registerItem.description}}</td> -->
+        <td (click)="expandRow($index)"><img style="height: 50px; width: 50px;" src="{{registerItem.pictureUrl}}" alt=""></td>
+        <td (click)="expandRow($index)">{{registerItem.price}}</td>
         <td style="width: 20px"><button (click)="AddToCart(registerItem)" class="btn btn-link"><i class="fa fa-plus"></i></button></td>
-        <!-- <td><button (click)="Remove(registerItem)"><i class="fa fa-trash"></i></button></td>  !!Overbodig!!§-->
-
-      </tr>
     </tbody>
   </table>
   <!-- EINDE REGISTER -->
   <!-- BEGIN CHECKOUT CART -->
 
-  <div class='d-flex justify-content-center align-items-center' *ngIf="this.checkOutCart.length > 0">
+  <div class='d-flex justify-content-center align-items-center' *ngIf="this.checkOutCart.length > 0" style="height: 200px; overflow-y:scroll; position : relative; bottom:0;">
     <div class="col-md4 order-md-2 mb-4" style="background-color: white; border-radius: 20px; padding: 9px">
       <h4 class="d-flex align-items-center mb-3">
         <span class="text-muted">Uw cadeau's!</span>
@@ -38,30 +77,18 @@
         <li class="list-group-item d-flex justify-content-between lh-condensed" style="height: 50px;">
           <div>
             <h6 class="my-0">{{items.name}} <button (click)="DeleteCartItem(items)" class="btn btn-link"><i class="fa fa-trash"></i></button></h6>
-            
+
           </div>
           <span class="text-muted">{{items.price}}</span>
         </li>
       </ul>
       <p>Totaal bedrag: {{this.total}} euro</p>
-      <button (click)="CheckOut(totalAmount)" class="btn btn-secondary" style="margin-left: 24%">Redeem!</button>
+      <button (click)="CheckOut(totalAmount)" class="btn btn-secondary" style="margin-left: 24%">Schenken</button>
     </div>
   </div>
 
 
   <!-- EINDE CHECKOUT CART -->
-  <!-- BEGIN TOEVOEGING REGISTER -->
 
-  <div class="card" style="width: 350px;" *ngIf="this.total==200" style="margin-top: 100px">
-
-    <input type="text" [(ngModel)]="Name" placeholder="Naam">
-    <input type="text" [(ngModel)]="Description" placeholder="Uitgebreid">
-    <input type="text" [(ngModel)]="PictureUrl" placeholder="PictureUrl">
-    <input type="number" [(ngModel)]="Quantity" placeholder="Aantal">
-    <input type="number" [(ngModel)]="Price" placeholder="Prijs">
-    <button (click)="postItem()" class="btn btn-dark" type="submit">Toevoegen</button>
-   <!-- EINDE TOEVOEGING REGISTER -->
-
-  </div>
 
 </body>

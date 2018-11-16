@@ -4,4 +4,13 @@
 
 .navbar-nav a{
     margin-left: 2%;
+    /* margin-top: */
+}
+
+nav{
+    height: 30px;
+}
+.navbar-brand{
+    margin-left: 19.5%;
+    margin-right:-19.5%
 }

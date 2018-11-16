@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
   selectedProduct : Subject<any> = new Subject;
   total: number = 0;
-  
+  expandedIndex: number = -1;
   result: any;
   public bedrag: number = 0;
   public tussenkomst: number;
@@ -40,6 +40,10 @@ export class RegisterComponent implements OnInit {
 
   GetFullRegister = () => {
     this.svc.getRegister().subscribe(data => {this.data = data; console.log(data[0].sold)}); 
+  }
+
+  expandRow(index: number): void {
+    this.expandedIndex = index === this.expandedIndex ? -1 : index;
   }
 
   postItem(){
