@@ -17,25 +17,23 @@ h1{
 
 .table-wrapper-scroll-y{
 display: block;
-height: 60%;
+max-height: 60%;
 overflow-y: auto;
 cursor: hand;
-max-width: 900px;
+/* max-width: 900px; */
 background-color: whitesmoke;
 margin-bottom: 15px;
 }
 
 .middenPaneel{
-    background-color: #efede3;
-    width: 80%;
-    max-width: 1200px;
-    min-width: 700px;
-    margin: 0 auto;
-    border-right-style: double;
-    border-left-style: double;
-    border-width: 12px;  
-    padding: 10px;
-}
-.fixed-bottom-center{
-    margin: 0 auto;
+background-color: #efede3;
+width: 80%;
+max-width: 1200px;
+min-width: 700px;
+margin: 0 auto;
+border-right-style: double;
+border-left-style: double;
+border-width: 12px;  
+padding: 10px;
+height: 98vh;
 }

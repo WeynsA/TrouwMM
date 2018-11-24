@@ -1,3 +1,4 @@
 {
-    "appService.deploySubpath": "dist\\TrouwWebMM"
+    "appService.deploySubpath": "dist\\TrouwWebMM",
+    "azureFunctions.projectLanguage": "C#"
 }

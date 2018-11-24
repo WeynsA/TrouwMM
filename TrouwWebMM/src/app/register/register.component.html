@@ -56,10 +56,8 @@
   <table class="table table-hover">
     <thead>
       <tr style="background-color: lightgrey">
-        <!-- <th scope="col">#</th> -->
         <th scope="col">Naam</th>
         <th scope="col">Foto</th>
-        <!-- <th scope="col">Description</th> -->
         <th scope="col">Aantal</th>
         <th scope="col">Prijs</th>
         <th scope="col"></th>
@@ -69,14 +67,10 @@
       <tr *ngFor="let registerItem of data; let $index=index;" style="cursor: pointer;">
         <td (click)="expandRow($index)" style="width:50%; cursor: pointer;">
           <div (click)="expandRow($index)" (click)="expandRow($index)"><b>{{registerItem.name}}</b></div>
-          <span *ngIf="$index === expandedIndex">{{registerItem.description}}</span>
+          <span *ngIf="$index === expandedIndex">{{registerItem.description}}</span> 
         </td>
         <td (click)="expandRow($index)"><img style="height: 50px; width: 50px;" src="{{registerItem.pictureUrl}}" alt=""></td>
-        <!-- <th scope="row">{{registerItem.id}}</th> -->
-        <!-- <td>{{registerItem.name}}</td> -->
         <td (click)="expandRow($index)">{{registerItem.sold}}/{{registerItem.quantity}}</td>
-        <!-- <td>{{registerItem.description}}</td> -->
-
         <td (click)="expandRow($index)">€ {{registerItem.price}}</td>
         <td style="width: 20px"><button (click)="AddToCart(registerItem)" class="btn btn-link"><i class="fa fa-plus"></i></button></td>
     </tbody>
@@ -85,20 +79,17 @@
   <!-- END REGISTER -->
   <!-- START CHECKOUT CART -->
 
-  <div class="card text-white bg-primary mb-3"*ngIf="this.checkOutCart.length > 0" style="max-height: 220px; overflow-y:scroll;" style="max-width: 18rem;">
-      <div class="card-header"><b>Uw cadeau's</b></div>
-  <div class='d-flex' *ngIf="this.checkOutCart.length > 0" style="max-height: 220px; overflow-y:scroll; background-color: whitesmoke; ">
-    <div class="col-md4 order-md-2 mb-4" style="border-radius: 20px; padding: 5px">
-      <ul class="list-group mb-3" *ngFor='let items of checkOutCart' style="background-color: whitesmoke;" >
-          <div class="d-flex flex-row">
-              <div class="p-2"><b>{{items.name}}</b></div>
+  <div class="card text-white bg-secondary mb-3" *ngIf="this.checkOutCart.length > 0" style="max-height: 250px; max-width: 18rem; margin:0 auto">
+      <div class="card-header"><b>Uw cadeau's   |   totaal: €{{this.total}}</b></div>
+  <div class='d-flex' *ngIf="this.checkOutCart.length > 0" style="background-color: whitesmoke;">
+    <div class="col-md4 order-md-2 mb-4" style="border-radius: 20px; padding: 5px; overflow-y: scroll">
+      <ul class="list-group mb-3" *ngFor='let items of checkOutCart'>
+          <div class="d-flex" style="height: 30px;">
+              <div class="mr-auto p-2"><b>{{items.name}}</b></div>
               <div class="p-2">€{{items.price}}</div>
-              <div class="p-2"><i class="fa fa-trash" style="margin-left: 20px"></i></div>
+              <div class="p-2" ><button (click)="DeleteCartItem(items)" class="btn btn-link" style="padding: -5px;"><i class="fa fa-trash" style="margin-left: 20px"></i></button></div>
             </div>
       </ul>
-
-      <p>Totaal bedrag: {{this.total}} euro</p>
-
       <button (click)="CheckOut(totalAmount)" class="btn btn-secondary" style="margin-left: 24%">Schenken</button>
     </div>
   </div>

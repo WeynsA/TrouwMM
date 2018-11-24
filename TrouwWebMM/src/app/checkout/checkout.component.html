@@ -1,5 +1,4 @@
 <body>
-  <div class="body">
   <!-- <div>
       <p>
       De pagina hieronder is een ludieke manier om te kiezen waar uw bijdrage naartoe gaat, indien u dit
@@ -15,9 +14,11 @@
       </ul>
 
   </div> -->
-  <div id="giftForm" class="giftForm">
+  <div class="middenPaneel">
+  <div class="d-flex" style="width: 66%; margin:0 auto;">
+    <div class="p-2" style="margin: 0 auto">
   <form>
-    <div class="form-group">
+    <div class="form-group" >
       <label for="exampleInputEmail1">Email address:</label>
       <input type="email" class="form-control" id="giftEmail" aria-describedby="emailHelp">
     </div>
@@ -35,23 +36,22 @@
     </div>    
     <button type="submit" (Click)="sendMessage()" class="btn btn-white">Verstuur bericht</button>
   </form>
-
-  <div id="table" class='d-inline-flex p-2 bd-highlight' *ngIf="this.cartItems && this.cartItems.length > 0" style="background-color: #efede3">
-    <div class="col-md4 order-md-2 mb-4" style="border-radius: 20px; padding: 5px">
-      <h4 class="d-flex align-items-center mb-3">
-        <span class="text-muted">Uw cadeau's!</span>
-      </h4>
-      <ul class="list-group mb-3" *ngFor='let item of cartItems' >
-        <li class="d-flex align-items-start" style="">
-            <b>{{item.name}}
-          €{{item.price}}</b>
-        </li>
-      </ul>
-      <p>Totaal bedrag: {{totalValue}} euro</p>
-      <!-- <button (click)="CheckOut(totalAmount)" class="btn btn-secondary" style="margin-left: 24%">Schenken</button> -->
-    </div>
   </div>
-
+<div class="ml-auto p-2" style="margin-top:25px">
+  <div class="card text-white bg-secondary mb-3" *ngIf="this.cartItems && this.cartItems.length > 0" style="max-width: 18rem;">
+    <div class="card-header"><b>Uw cadeau's   |   totaal: €{{totalValue}}</b></div>
+<div class='d-flex' *ngIf="this.cartItems.length > 0" style="background-color: whitesmoke; ">
+  <div class="col-md4 order-md-2 mb-4" style="border-radius: 20px; padding: 5px">
+    <ul class="list-group mb-3" *ngFor='let item of cartItems' style="background-color: whitesmoke;" >
+        <div class="d-flex">
+            <div class="mr-auto p-2"><b>{{item.name}}</b></div>
+            <div class="p-2">€{{item.price}}</div>
+          </div>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </body>
