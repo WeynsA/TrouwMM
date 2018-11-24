@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { checkoutCart} from '../register/register.component'
 
 
 @Component({
@@ -14,7 +15,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   getItemsInCart(eindbedrag:number){
-
+    console.log(eindbedrag)
   }
 
   sendMessage(){

@@ -133,7 +133,10 @@ export class RegisterComponent implements OnInit {
   }
 }
 
-
+export interface checkoutCart{
+  totalPrice: number;
+  RegisterItem;
+}
 
 
   // public Post(){

@@ -3,14 +3,13 @@
     src: url(../../assets/fonts/SmartFrocksNF.ttf) format("truetype");
   }
   .headDiv{
-    padding-top: 20px;
-    background-color:white;   
+    padding-top: 20px; 
     background-color: #efede3;
     border-style: none;
 }
 .hoofding{
     height: 295px;
-    background-color:white;
+    background-color: #efede3;
     width: 900px;
     margin: 0 auto;
 }

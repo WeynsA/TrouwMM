@@ -8,3 +8,8 @@
 body{
     -webkit-text-fill-color: black;
 }
+
+table:hover{    
+    cursor: hand;    
+}
+

@@ -1,6 +1,6 @@
 <body>
 
-  <!-- BEGIN TOEVOEGING REGISTER -->
+  <!-- START ADD REGISTER -->
 <!-- 
   <div class="card" style="width: 350px;" *ngIf="200==200" style="margin-top: 100px">
 
@@ -18,7 +18,7 @@
     <span>Prijs</span>
     <input type="number" [(ngModel)]="Price" placeholder="Prijs"><br>
     <button (click)="postItem()" class="btn btn-primary" type="submit">Toevoegen</button></div> -->
-  <!-- EINDE TOEVOEGING REGISTER -->
+  <!-- END ADD REGISTER -->
   <p>
     Na alle drukte van onze trouw willen wij met z’n tweeën gaan ontspannen in de bergen en steden
     van het prachtige Japan. Michèle wil in een kimono rondlopen, Matthias wil met katana’s en
@@ -37,9 +37,9 @@
 <br>Weyns-Van Spilbeeck<br>
 BE23 9731 5176 2291
   </p>
-  <!-- BEGIN REGISTER -->
+  <!-- START REGISTER -->
 
-  <table class="table table-hover" style="width: 900px;">
+  <table class="table table-hover" style="width: 900px; cursor: hand;">
     <thead>
       <tr>
         <!-- <th scope="col">#</th> -->
@@ -50,9 +50,9 @@ BE23 9731 5176 2291
         <th scope="col">Prijs</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let registerItem of data; let $index=index;" style="width: 200px;">
-        <td (click)="expandRow($index)" style="width:50%;">
+    <tbody style="cursor: pointer;">
+      <tr *ngFor="let registerItem of data; let $index=index;" style="width: 200px; cursor: pointer;">
+        <td (click)="expandRow($index)" style="width:50%; cursor: pointer;">
           <div (click)="expandRow($index)" (click)="expandRow($index)">{{registerItem.name}}</div>
           <span *ngIf="$index === expandedIndex">{{registerItem.description}}</span>
         </td>
@@ -61,25 +61,22 @@ BE23 9731 5176 2291
         <td (click)="expandRow($index)">{{registerItem.sold}}/{{registerItem.quantity}}</td>
         <!-- <td>{{registerItem.description}}</td> -->
         <td (click)="expandRow($index)"><img style="height: 50px; width: 50px;" src="{{registerItem.pictureUrl}}" alt=""></td>
-        <td (click)="expandRow($index)">{{registerItem.price}}</td>
+        <td (click)="expandRow($index)">€ {{registerItem.price}}</td>
         <td style="width: 20px"><button (click)="AddToCart(registerItem)" class="btn btn-link"><i class="fa fa-plus"></i></button></td>
     </tbody>
   </table>
-  <!-- EINDE REGISTER -->
-  <!-- BEGIN CHECKOUT CART -->
+  <!-- END REGISTER -->
+  <!-- START CHECKOUT CART -->
 
-  <div class='d-flex justify-content-center align-items-center' *ngIf="this.checkOutCart.length > 0" style="height: 200px; overflow-y:scroll; position : relative; bottom:0;">
-    <div class="col-md4 order-md-2 mb-4" style="background-color: white; border-radius: 20px; padding: 9px">
+  <div class='d-inline-flex p-2 bd-highlight' *ngIf="this.checkOutCart.length > 0" style="max-height: 220px; overflow-y:scroll; background-color: goldenrod">
+    <div class="col-md4 order-md-2 mb-4" style="border-radius: 20px; padding: 5px">
       <h4 class="d-flex align-items-center mb-3">
         <span class="text-muted">Uw cadeau's!</span>
       </h4>
-      <ul class="list-group mb-3" *ngFor='let items of checkOutCart'>
-        <li class="list-group-item d-flex justify-content-between lh-condensed" style="height: 50px;">
-          <div>
-            <h6 class="my-0">{{items.name}} <button (click)="DeleteCartItem(items)" class="btn btn-link"><i class="fa fa-trash"></i></button></h6>
-
-          </div>
-          <span class="text-muted">{{items.price}}</span>
+      <ul class="list-group mb-3" *ngFor='let items of checkOutCart' >
+        <li class="d-flex align-items-start" style="height: 30px; background: goldenrod; border-style: none">
+            <b>{{items.name}} <button (click)="DeleteCartItem(items)" class="btn btn-link"></button>
+          €{{items.price}}<i class="fa fa-trash" style="margin-left: 20px"></i></b>
         </li>
       </ul>
       <p>Totaal bedrag: {{this.total}} euro</p>
@@ -88,7 +85,7 @@ BE23 9731 5176 2291
   </div>
 
 
-  <!-- EINDE CHECKOUT CART -->
+  <!-- START CHECKOUT CART -->
 
 
 </body>
