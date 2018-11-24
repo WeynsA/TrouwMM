@@ -1,5 +1,5 @@
 <body>
-
+<div class="middenPaneel">
   <!-- START ADD REGISTER -->
 <!-- 
   <div class="card" style="width: 350px;" *ngIf="200==200" style="margin-top: 100px">
@@ -19,7 +19,8 @@
     <input type="number" [(ngModel)]="Price" placeholder="Prijs"><br>
     <button (click)="postItem()" class="btn btn-primary" type="submit">Toevoegen</button></div> -->
   <!-- END ADD REGISTER -->
-  <p>
+  <div class="uitleg">
+  <!-- <p>
     Na alle drukte van onze trouw willen wij met z’n tweeën gaan ontspannen in de bergen en steden
     van het prachtige Japan. Michèle wil in een kimono rondlopen, Matthias wil met katana’s en
     wakizashi’s rondzwaaien en beiden willen graag Pokémon vangen in hun natuurlijke habitat. Indien u
@@ -31,61 +32,81 @@
     Omdat een kluis in Gringott’s voor ons niet toegankelijk is en een draak leasen op korte termijn even
     duur blijkt als een parkeerboete in Gent, is de betalingsmethode van onze keuze een rekening bij
     Argenta geworden. Laat ons zeggen dat het bijna even veilig en mogelijk toegankelijker is.
-  </p>
-  <p>
-    De rekening:
-<br>Weyns-Van Spilbeeck<br>
-BE23 9731 5176 2291
-  </p>
+  </p> -->
+  <h1>
+    Huwelijksregister
+  </h1>
+    <div>
+      <p>
+      De pagina hieronder is een ludieke manier om te kiezen waar uw bijdrage naartoe gaat, indien u dit
+      wenst. Opnieuw, dit is uiteraard volledig vrijblijvend. Concreet, hoe werkt het?</p>
+      <ul>
+        <li>U kiest hieronder (een) activiteit(en) naar wens. Om verder te gaan, klikt u op ‘Schenk!’</li>
+        <li>U komt vervolgens op een bevestigingspagina terecht waar u een samenvatting ziet van uw
+            gekozen bedrag en activiteit(en).</li>
+        <li> U laat daar uw emailadres en naam achter en eventueel een leuke boodschap aan ons. Zo
+            weten wij achteraf ook wie wat gekozen heeft.</li>
+        <li>U klikt op ‘Verstuur!’. Hierna dient u het door u gekozen bedrag zelf overmaken op onze
+            rekeningnummer BE23 9731 5176 2291 of u geeft dit op onze trouwdag zelf.</li>
+      </ul>
+  </div>
+</div>
   <!-- START REGISTER -->
-
-  <table class="table table-hover" style="width: 900px; cursor: hand;">
+  <div class="table-wrapper-scroll-y">
+  <table class="table table-hover">
     <thead>
-      <tr>
+      <tr style="background-color: lightgrey">
         <!-- <th scope="col">#</th> -->
         <th scope="col">Naam</th>
-        <th scope="col">Hoeveelheid</th>
-        <!-- <th scope="col">Description</th> -->
         <th scope="col">Foto</th>
+        <!-- <th scope="col">Description</th> -->
+        <th scope="col">Aantal</th>
         <th scope="col">Prijs</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody style="cursor: pointer;">
-      <tr *ngFor="let registerItem of data; let $index=index;" style="width: 200px; cursor: pointer;">
+      <tr *ngFor="let registerItem of data; let $index=index;" style="cursor: pointer;">
         <td (click)="expandRow($index)" style="width:50%; cursor: pointer;">
-          <div (click)="expandRow($index)" (click)="expandRow($index)">{{registerItem.name}}</div>
+          <div (click)="expandRow($index)" (click)="expandRow($index)"><b>{{registerItem.name}}</b></div>
           <span *ngIf="$index === expandedIndex">{{registerItem.description}}</span>
         </td>
+        <td (click)="expandRow($index)"><img style="height: 50px; width: 50px;" src="{{registerItem.pictureUrl}}" alt=""></td>
         <!-- <th scope="row">{{registerItem.id}}</th> -->
         <!-- <td>{{registerItem.name}}</td> -->
         <td (click)="expandRow($index)">{{registerItem.sold}}/{{registerItem.quantity}}</td>
         <!-- <td>{{registerItem.description}}</td> -->
-        <td (click)="expandRow($index)"><img style="height: 50px; width: 50px;" src="{{registerItem.pictureUrl}}" alt=""></td>
+
         <td (click)="expandRow($index)">€ {{registerItem.price}}</td>
         <td style="width: 20px"><button (click)="AddToCart(registerItem)" class="btn btn-link"><i class="fa fa-plus"></i></button></td>
     </tbody>
   </table>
+  </div>
   <!-- END REGISTER -->
   <!-- START CHECKOUT CART -->
 
-  <div class='d-inline-flex p-2 bd-highlight' *ngIf="this.checkOutCart.length > 0" style="max-height: 220px; overflow-y:scroll; background-color: goldenrod">
+  <div class="card text-white bg-primary mb-3"*ngIf="this.checkOutCart.length > 0" style="max-height: 220px; overflow-y:scroll;" style="max-width: 18rem;">
+      <div class="card-header"><b>Uw cadeau's</b></div>
+  <div class='d-flex' *ngIf="this.checkOutCart.length > 0" style="max-height: 220px; overflow-y:scroll; background-color: whitesmoke; ">
     <div class="col-md4 order-md-2 mb-4" style="border-radius: 20px; padding: 5px">
-      <h4 class="d-flex align-items-center mb-3">
-        <span class="text-muted">Uw cadeau's!</span>
-      </h4>
-      <ul class="list-group mb-3" *ngFor='let items of checkOutCart' >
-        <li class="d-flex align-items-start" style="height: 30px; background: goldenrod; border-style: none">
-            <b>{{items.name}} <button (click)="DeleteCartItem(items)" class="btn btn-link"></button>
-          €{{items.price}}<i class="fa fa-trash" style="margin-left: 20px"></i></b>
-        </li>
+      <ul class="list-group mb-3" *ngFor='let items of checkOutCart' style="background-color: whitesmoke;" >
+          <div class="d-flex flex-row">
+              <div class="p-2"><b>{{items.name}}</b></div>
+              <div class="p-2">€{{items.price}}</div>
+              <div class="p-2"><i class="fa fa-trash" style="margin-left: 20px"></i></div>
+            </div>
       </ul>
+
       <p>Totaal bedrag: {{this.total}} euro</p>
+
       <button (click)="CheckOut(totalAmount)" class="btn btn-secondary" style="margin-left: 24%">Schenken</button>
     </div>
   </div>
+</div>
+
 
 
   <!-- START CHECKOUT CART -->
-
+</div>
 
 </body>

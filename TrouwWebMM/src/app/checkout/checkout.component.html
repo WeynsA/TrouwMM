@@ -15,7 +15,7 @@
       </ul>
 
   </div> -->
-  <div id="giftFrom" class="giftFrom">
+  <div id="giftForm" class="giftForm">
   <form>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address:</label>
@@ -34,8 +34,24 @@
       <textarea type="text" class="form-control" id="giftMessage" rows="6"></textarea>
     </div>    
     <button type="submit" (Click)="sendMessage()" class="btn btn-white">Verstuur bericht</button>
-
   </form>
+
+  <div id="table" class='d-inline-flex p-2 bd-highlight' *ngIf="this.cartItems && this.cartItems.length > 0" style="background-color: #efede3">
+    <div class="col-md4 order-md-2 mb-4" style="border-radius: 20px; padding: 5px">
+      <h4 class="d-flex align-items-center mb-3">
+        <span class="text-muted">Uw cadeau's!</span>
+      </h4>
+      <ul class="list-group mb-3" *ngFor='let item of cartItems' >
+        <li class="d-flex align-items-start" style="">
+            <b>{{item.name}}
+          €{{item.price}}</b>
+        </li>
+      </ul>
+      <p>Totaal bedrag: {{totalValue}} euro</p>
+      <!-- <button (click)="CheckOut(totalAmount)" class="btn btn-secondary" style="margin-left: 24%">Schenken</button> -->
+    </div>
+  </div>
+
 </div>
 </div>
 </body>

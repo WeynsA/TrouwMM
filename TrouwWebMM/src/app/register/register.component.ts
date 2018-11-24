@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 import { RegisterItem, RegisteraddService } from "../services/registeradd.service";
 import { HttpClient } from '@angular/common/http';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import { AddtocartService } from "../services/addtocart.service";
 
 @Component({
   selector: 'app-register',
@@ -32,7 +33,7 @@ export class RegisterComponent implements OnInit {
   
   data: RegisterItem[];
 
-  constructor(private router: Router, private svc: RegisteraddService, private http:HttpClient) {}
+  constructor(private router: Router, private svc: RegisteraddService, private http:HttpClient, private svcCart: AddtocartService) {}
 
   ngOnInit() {
     this.GetFullRegister();
@@ -83,8 +84,8 @@ export class RegisterComponent implements OnInit {
   public CheckOut(eindBedrag: number, cart: any){
     eindBedrag = this.bedrag;
     cart = this.checkOutCart;
-
-    this.router.navigateByUrl('/checkout')
+    this.svcCart.adding(this.checkOutCart, this.bedrag);
+    this.router.navigateByUrl('/checkout');
 
     console.log(eindBedrag, cart)
   }

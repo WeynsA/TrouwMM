@@ -1,15 +1,41 @@
-.anyClass{
-    height:250px;
-    overflow-y: scroll;
-    border-radius: 1em;
-    border-color: black;
-}
-
-body{
-    -webkit-text-fill-color: black;
-}
+@font-face {
+    font-family: 'collona';
+    src: url(../../assets/fonts/SmartFrocksNF.ttf) format("truetype");
+  }
 
 table:hover{    
     cursor: hand;    
 }
 
+h1{
+    font-family: collona;
+    -webkit-text-fill-color: darkgoldenrod;
+    font-weight: bold;
+    font-size: 64px;
+    text-align: center;
+}
+
+.table-wrapper-scroll-y{
+display: block;
+height: 60%;
+overflow-y: auto;
+cursor: hand;
+max-width: 900px;
+background-color: whitesmoke;
+margin-bottom: 15px;
+}
+
+.middenPaneel{
+    background-color: #efede3;
+    width: 80%;
+    max-width: 1200px;
+    min-width: 700px;
+    margin: 0 auto;
+    border-right-style: double;
+    border-left-style: double;
+    border-width: 12px;  
+    padding: 10px;
+}
+.fixed-bottom-center{
+    margin: 0 auto;
+}

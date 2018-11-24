@@ -7,4 +7,9 @@
 form{
     width: 300px;
     margin: 0 auto;
+    align-self: auto;
+}
+
+.d-inline-flex-p-2-bd-highlight{
+    margin-left:350px;;
 }
