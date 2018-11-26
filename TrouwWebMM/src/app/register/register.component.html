@@ -20,19 +20,6 @@
     <button (click)="postItem()" class="btn btn-primary" type="submit">Toevoegen</button></div> -->
   <!-- END ADD REGISTER -->
   <div class="uitleg">
-  <!-- <p>
-    Na alle drukte van onze trouw willen wij met z’n tweeën gaan ontspannen in de bergen en steden
-    van het prachtige Japan. Michèle wil in een kimono rondlopen, Matthias wil met katana’s en
-    wakizashi’s rondzwaaien en beiden willen graag Pokémon vangen in hun natuurlijke habitat. Indien u
-    wenst, kan u op deze pagina - volledig vrijblijvend uiteraard - een bijdrage schenken voor onze
-    huwelijksreis.
-  </p>
-
-  <p>
-    Omdat een kluis in Gringott’s voor ons niet toegankelijk is en een draak leasen op korte termijn even
-    duur blijkt als een parkeerboete in Gent, is de betalingsmethode van onze keuze een rekening bij
-    Argenta geworden. Laat ons zeggen dat het bijna even veilig en mogelijk toegankelijker is.
-  </p> -->
   <h1>
     Huwelijksregister
   </h1>
@@ -79,15 +66,15 @@
   <!-- END REGISTER -->
   <!-- START CHECKOUT CART -->
 
-  <div class="card text-white bg-secondary mb-3" *ngIf="this.checkOutCart.length > 0" style="max-height: 250px; max-width: 18rem; margin:0 auto">
+  <div class="card text-white bg-secondary mb-3" *ngIf="this.checkOutCart.length > 0">
       <div class="card-header"><b>Uw cadeau's   |   totaal: €{{this.total}}</b></div>
   <div class='d-flex' *ngIf="this.checkOutCart.length > 0" style="background-color: whitesmoke;">
     <div class="col-md4 order-md-2 mb-4" style="border-radius: 20px; padding: 5px; overflow-y: scroll">
       <ul class="list-group mb-3" *ngFor='let items of checkOutCart'>
-          <div class="d-flex" style="height: 30px;">
+          <div class="d-flex" style="height: 25px;">
               <div class="mr-auto p-2"><b>{{items.name}}</b></div>
               <div class="p-2">€{{items.price}}</div>
-              <div class="p-2" ><button (click)="DeleteCartItem(items)" class="btn btn-link" style="padding: -5px;"><i class="fa fa-trash" style="margin-left: 20px"></i></button></div>
+              <div class="p-2" style="margin-top: -7px;"><button (click)="DeleteCartItem(items)" class="btn btn-link"><i class="fa fa-trash" aria-hidden="true" style="margin-left: 1px;"></i></button></div>
             </div>
       </ul>
       <button (click)="CheckOut(totalAmount)" class="btn btn-secondary" style="margin-left: 24%">Schenken</button>

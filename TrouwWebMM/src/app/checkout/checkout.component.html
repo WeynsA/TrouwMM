@@ -20,21 +20,22 @@
   <form>
     <div class="form-group" >
       <label for="exampleInputEmail1">Email address:</label>
-      <input type="email" class="form-control" id="giftEmail" aria-describedby="emailHelp">
+      <input type="email" class="form-control" id="giftEmail" [(ngModel)]="Email" name="first" aria-describedby="emailHelp">
     </div>
     <div class="form-group">
       <label for="giftFirstName">Voornaam:</label>
-      <input type="text" class="form-control" id="giftFirstName" placeholder="">
+      <input type="text" class="form-control" id="giftFirstName" [(ngModel)]="FirstName" name="first">
     </div>
     <div class="form-group">
-      <label class="form-check-label" for="giftLastName">Achternaam:</label>
-      <input type="text" class="form-control" id="giftLastName">
+      <label for="giftLastName">Achternaam:</label>
+      <input type="text" class="form-control" id="giftLastName" [(ngModel)]="LastName" name="first">
     </div>
     <div class="form-group">
       <label class="form-check-label" for="giftMessage">Laat hier een berichtje aan ons achter:</label>
-      <textarea type="text" class="form-control" id="giftMessage" rows="6"></textarea>
+      <textarea type="text" class="form-control" id="giftMessage" rows="6" [(ngModel)]="Message" name="first"></textarea>
     </div>    
-    <button type="submit" (Click)="sendMessage()" class="btn btn-white">Verstuur bericht</button>
+    <button type="submit" (click)="showData(cartItems)" class="btn btn-white">Verstuur bericht</button>
+    
   </form>
   </div>
 <div class="ml-auto p-2" style="margin-top:25px">

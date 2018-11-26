@@ -41,7 +41,7 @@ var router = express.Router();
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey('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');
 const msg = {
-  to: 'michelevanspilbeeck@gmail.com',
+  to: 'weyns.arno@gmail.com',
   from: 'trouwMM@test.com',
   subject: 'RSVP Arno Weyns',
   text: 'Er komen nog mensen!',

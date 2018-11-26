@@ -49,7 +49,6 @@ export class RegisterComponent implements OnInit {
 
   postItem(){
     this.http.post('https://trouwmmapi.azurewebsites.net/api/resterend', {
-      Id: this.id,
       name: this.name,
       description: this.description,
       price: this.price,

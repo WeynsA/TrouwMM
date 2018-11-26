@@ -15,16 +15,6 @@ h1{
     text-align: center;
 }
 
-.table-wrapper-scroll-y{
-display: block;
-max-height: 60%;
-overflow-y: auto;
-cursor: hand;
-/* max-width: 900px; */
-background-color: whitesmoke;
-margin-bottom: 15px;
-}
-
 .middenPaneel{
 background-color: #efede3;
 width: 80%;
@@ -35,5 +25,40 @@ border-right-style: double;
 border-left-style: double;
 border-width: 12px;  
 padding: 10px;
-height: 98vh;
+height: 99vh;
 }
+
+
+.card{
+    max-height: 600px; 
+    max-width: 300px; 
+    margin:0 auto;
+    /* display: block; */
+    float: left;
+}
+
+.table-wrapper-scroll-y{
+    display: block;
+    height: auto;
+    max-height: 600px;
+    overflow-y: auto;
+    cursor: hand;
+    /* min-width: 600px; */
+    width:80%;
+    max-width:800px;
+    background-color: whitesmoke;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    /* width:600px; */
+    float: left;
+}
+
+@media(max-width:1395px){
+    .card{
+        max-height: 300px; 
+        margin:0 auto;
+        /* display: block; */
+        float: left;
+    }
+}
+
