@@ -10,15 +10,16 @@
     font-family: 'lucida';
     src: url(../../assets/fonts/Lucida.ttf) format("truetype");
   }
-  .headDiv{
+.headDiv{
+    width: 100;
+    display: block;
     padding-top: 20px; 
-    /* background-color: #efede3; */
     border-style: none;
+    margin: 0 auto;
 }
 .hoofding{
-    height: 295px;
-    /* background-color: #efede3; */
-    width: 900px;
+    display: block;
+    width: 100%;
     margin: 0 auto;
 }
 .lijn{
@@ -64,10 +65,9 @@
 }
 .fotoMidden{
     display: block;
-    float:left;
-    margin-top: 50px;
-    margin-left: 20px;
-    width: 50%;
+    /* margin-top: 50px; */
+    width:70%;
+    margin: 0 auto;
 }
 .nuttigeInfo{
     margin-top:20em;
@@ -99,16 +99,16 @@ agm-map {
     width: 98%;
     margin-left: -5px;
 }
-.bannerBot{
+.bannerBot1{
     width: 250px;
     margin: 0 auto;
     margin-bottom: 10px;
     margin-top: 20px;
 }
-.bannerTop{
+.bannerTop1{
     width: 250px;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 10px;
 }
 #homeNav{
