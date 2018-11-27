@@ -2,14 +2,22 @@
     font-family: 'collona';
     src: url(../../assets/fonts/SmartFrocksNF.ttf) format("truetype");
   }
+  @font-face {
+    font-family: 'rochester';
+    src: url(../../assets/fonts/Rochester-Regular.otf) format("opentype");
+  }
+  @font-face {
+    font-family: 'lucida';
+    src: url(../../assets/fonts/Lucida.ttf) format("truetype");
+  }
   .headDiv{
     padding-top: 20px; 
-    background-color: #efede3;
+    /* background-color: #efede3; */
     border-style: none;
 }
 .hoofding{
     height: 295px;
-    background-color: #efede3;
+    /* background-color: #efede3; */
     width: 900px;
     margin: 0 auto;
 }
@@ -20,13 +28,15 @@
     background-color: black;
 }
 .middenPaneel{
-    background-color: #efede3;
-    width: 900px;
+    /* background-color: #efede3; */
+    width: 50%;
+    min-width: 700px;
     margin: 0 auto;
-    border-right-style: double;
-    border-left-style: double;
+    /* border-right-style: double; */
+    /* border-left-style: double; */
     border-width: 12px;  
     padding: 10px;
+    text-align: center;
 }
 .intro {
     text-align: left;
@@ -86,13 +96,19 @@ agm-map {
     border-radius: 20%;
 }
 .banner{
-    width: 876px;
+    width: 98%;
     margin-left: -5px;
 }
-.bannerBot, .bannerTop{
-    width: 300px;
+.bannerBot{
+    width: 250px;
     margin: 0 auto;
     margin-bottom: 10px;
+    margin-top: 20px;
+}
+.bannerTop{
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 20px;
     margin-top: 10px;
 }
 #homeNav{
@@ -106,11 +122,6 @@ a{
 }
 .collapsible-body{
     margin: 0 auto;
-}
-.RSVP{
-    /* height: 220px; */
-    width: 838px;
-    /* margin-left: 20px; */
 }
 
 .receptieBol{
@@ -163,29 +174,33 @@ a{
     padding: 30px 0;
 }
 
-text {
-    fill:  rgb(137, 200, 241);
-    letter-spacing: 5px;
-  }
-
-path {
-    fill: rgb(254, 255, 255);
-}
 h1{
-    font-family: collona;
-    -webkit-text-fill-color: darkgoldenrod;
-    font-weight: bold;
-    font-size: 48px;
+    font-family: lucida;
+    -webkit-text-fill-color: #ab8d3f;
+    -webkit-text-fill-color: black;
+
+    font-size: 36px;
     text-align: center;
+
 }
 h2{
-    font-family: collona;
-    -webkit-text-fill-color: darkgoldenrod;
-    font-weight: bold;
-    font-size: 36px;
+    font-family: lucida;
+    -webkit-text-fill-color: black;
+    font-size: 30px;
     text-align: center;
 }
 .opsomming{
+    text-align: center;
+}
+
+h4{
+    font-family: rochester;
+    -webkit-text-fill-color: #ab8d3f;
+    margin: auto 0;
+    font-size: 68px;
+}
+
+p{
     text-align: center;
 }
 
