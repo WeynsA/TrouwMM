@@ -14,8 +14,6 @@ namespace TrouwApi.Controllers
         public class VerkochtController : ControllerBase
         {
             private readonly DBContext ctx;
-
-
             public VerkochtController(DBContext context)
             {
                 ctx = context;
@@ -64,8 +62,10 @@ namespace TrouwApi.Controllers
                 updateItem.LastName = oldItem.LastName;
                 updateItem.Amount = oldItem.Amount;
                 updateItem.Message = oldItem.Message;
+                updateItem.Email = oldItem.Email;
+                updateItem.Items = oldItem.Items;
 
-                return Ok(updateItem);
+            return Ok(updateItem);
             }
 
             // DELETE api/values/5
