@@ -16,25 +16,23 @@ h1{
 }
 
 .middenPaneel{
-background-color: #efede3;
 width: 80%;
 max-width: 1200px;
-min-width: 700px;
+min-width: 900px;
 margin: 0 auto;
-border-right-style: double;
-border-left-style: double;
 border-width: 12px;  
 padding: 10px;
-height: 99vh;
+height: 1200px;
 }
 
 
 .card{
     max-height: 600px; 
-    max-width: 300px; 
+    max-width: 400px; 
     margin:0 auto;
     /* display: block; */
     float: left;
+    line-height: 15px;
 }
 
 .table-wrapper-scroll-y{
@@ -45,7 +43,7 @@ height: 99vh;
     cursor: hand;
     /* min-width: 600px; */
     width:80%;
-    max-width:800px;
+    max-width:700px;
     background-color: whitesmoke;
     margin-bottom: 15px;
     margin-right: 10px;

@@ -15,13 +15,10 @@ form{
 }
 
 .middenPaneel{
-    background-color: #efede3;
     width: 80%;
     max-width: 1200px;
     min-width: 700px;
     margin: 0 auto;
-    border-right-style: double;
-    border-left-style: double;
     border-width: 12px;  
     padding: 10px;
     height: 98vh;
