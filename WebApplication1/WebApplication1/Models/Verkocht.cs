@@ -12,6 +12,8 @@ namespace TrouwApi.Models
         public string LastName { get; set; }
         public int Amount { get; set; }
         public string Message { get; set; }
-
+        public string Items { get; set; }
+        public string Straatnaam { get; set; }
+        public string Gemeente { get; set; }
     }
 }

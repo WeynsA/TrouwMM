@@ -14,6 +14,8 @@ export class CheckoutComponent implements OnInit {
   private lastName: string;
   private email: string;
   private message: string;
+  private straatnaam: string;
+  private gemeente: string;
 
   cartItems: any[] = [];
   itemNames: string;
@@ -61,7 +63,9 @@ export class CheckoutComponent implements OnInit {
       amount: this.totalValue,
       message: this.message,
       email: this.email,
-      items: this.itemNames
+      items: this.itemNames,
+      straatnaam: this.straatnaam,
+      gemeente: this.gemeente
     })
     .subscribe((data: any)=>{
     })
@@ -101,6 +105,14 @@ export class CheckoutComponent implements OnInit {
     return this.message;
   }
 
+  get Straatnaam() {
+    return this.straatnaam;
+  }
+
+  get Gemeente() {
+    return this.gemeente;
+  }
+
   @Output() nameChange = new EventEmitter();  
   set FirstName(value: string) {
     this.firstName = value;
@@ -117,5 +129,13 @@ export class CheckoutComponent implements OnInit {
   set Message(value: string) {
     this.message = value;
     this.nameChange.emit(this.message);
+  }
+  set Straatnaam(value: string) {
+    this.firstName = value;
+    this.nameChange.emit(this.firstName);
+  }
+  set Gemeente(value: string) {
+    this.firstName = value;
+    this.nameChange.emit(this.firstName);
   }
 }
