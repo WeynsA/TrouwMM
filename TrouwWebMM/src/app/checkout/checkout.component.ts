@@ -53,7 +53,7 @@ export class CheckoutComponent implements OnInit {
     this.GetItemNames(cartItems);
     this.putItem(cartItems);
     this.postItem();
-    alert("Naam: " + this.firstName + " AchterNaam: "+ this.lastName +" email: "+ this.email +" bericht: "+ this.message + " bedrag: "+this.totalValue + " spullen: "+ this.itemNames)
+    alert('Bericht verzonden!')
   }
 
   postItem(){
@@ -131,11 +131,11 @@ export class CheckoutComponent implements OnInit {
     this.nameChange.emit(this.message);
   }
   set Straatnaam(value: string) {
-    this.firstName = value;
-    this.nameChange.emit(this.firstName);
+    this.straatnaam = value;
+    this.nameChange.emit(this.straatnaam);
   }
   set Gemeente(value: string) {
-    this.firstName = value;
-    this.nameChange.emit(this.firstName);
+    this.gemeente = value;
+    this.nameChange.emit(this.gemeente);
   }
 }
